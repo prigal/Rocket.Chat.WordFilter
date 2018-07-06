@@ -1,0 +1,15 @@
+{
+    "id": "28186184-a2eb-4359-9c6f-b20086141085",
+    "name": "Word Filter",
+    "nameSlug": "word-filter",
+    "description": "Replaces all occurences of words in messages with other words.",
+    "version": "0.0.1",
+    "requiredApiVersion": "^0.9.13",
+    "author": {
+        "name": "vynmera",
+        "homepage": "https://github.com/vynmera/Rocket.Chat.WordFilter",
+        "support": "https://github.com/vynmera/Rocket.Chat.WordFilter/issues"
+    },
+    "classFile": "FilterApp.ts",
+    "iconFile": "icon.jpg"
+}
