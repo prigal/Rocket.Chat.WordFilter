@@ -1,8 +1,8 @@
-import { IConfigurationExtend, IConfigurationModify, IEnvironmentRead, IHttp, ILogger, IMessageBuilder, IMessageExtender, IPersistence, IRead } from '@rocket.chat/apps-ts-definition/accessors';
-import { App } from '@rocket.chat/apps-ts-definition/App';
-import { IMessage, IMessageAttachment, IPreMessageSentModify } from '@rocket.chat/apps-ts-definition/messages';
-import { IAppInfo } from '@rocket.chat/apps-ts-definition/metadata';
-import { SettingType, ISetting } from '@rocket.chat/apps-ts-definition/settings';
+import { IAppAccessors, IConfigurationExtend, IConfigurationModify, IEnvironmentRead, IHttp, ILogger, IMessageBuilder, IMessageExtender, IPersistence, IRead } from '@rocket.chat/apps-engine/definition/accessors';
+import { App } from '@rocket.chat/apps-engine/definition/App';
+import { IMessage, IMessageAttachment, IPreMessageSentModify } from '@rocket.chat/apps-engine/definition/messages';
+import { IAppInfo } from '@rocket.chat/apps-engine/definition/metadata';
+import { SettingType, ISetting } from '@rocket.chat/apps-engine/definition/settings';
 
 export class FilterApp extends App implements IPreMessageSentModify {
     private filterList;
@@ -27,7 +27,7 @@ export class FilterApp extends App implements IPreMessageSentModify {
 
     public async onEnable(environment: IEnvironmentRead, configurationModify: IConfigurationModify): Promise<boolean> {
         const metaFilterList = await environment.getSettings().getValueById('filterList') as string;
-        
+
         return this.parseConfig(metaFilterList);
     }
 

@@ -3,13 +3,16 @@
     "name": "Word Filter",
     "nameSlug": "word-filter",
     "description": "Replaces all occurences of words in messages with other words.",
-    "version": "0.0.1",
-    "requiredApiVersion": "^0.9.13",
+    "version": "0.0.2",
+    "requiredApiVersion": "^1.6.0",
     "author": {
         "name": "vynmera",
         "homepage": "https://github.com/vynmera/Rocket.Chat.WordFilter",
         "support": "https://github.com/vynmera/Rocket.Chat.WordFilter/issues"
     },
     "classFile": "FilterApp.ts",
-    "iconFile": "icon.jpg"
+    "iconFile": "icon.jpg",
+    "implements": [
+        "IPreMessageSentModify"
+    ]
 }
